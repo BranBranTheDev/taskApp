@@ -9,9 +9,18 @@ function addTask() {
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
+
         let span = document.createElement("span");
+        span.className = "remove";
         span.innerHTML = "\u00d7";
         li.appendChild(span);
+
+        let editSpan = document.createElement("span");
+        editSpan.className = "edit";
+        let img = document.createElement("img");
+        img.src = "images/edit.png";
+        editSpan.appendChild(img);
+        li.appendChild(editSpan);
     }
     inputBox.value = '';
     saveData();
